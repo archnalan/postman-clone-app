@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PostmanCloneLibrary;
 
 namespace PostmanCloneUI
 {
 	public partial class Dashboard : Form
 	{
-		public Dashboard()
+		private readonly ApiAccess _apiAccess = new();
+        
+        public Dashboard()
 		{
 			InitializeComponent();
 		}
@@ -20,14 +23,23 @@ namespace PostmanCloneUI
 		//avoiding any actual backend code in the UI
 		private async void callApi_Click(object sender, EventArgs e)
 		{
+			resultsText.Text = "";
+			
+			statusStripLabel.Text = "Calling api...";
+
 			//Validate user input
+			if (_apiAccess.IsValidUrl(apiLink.Text) == false)
+			{
+				 statusStripLabel.Text = "INVALID URL";
+				return;
+			}
 
 			try
-			{
-				statusStripLabel.Text = "Calling api...";
-
+			{	
 				//Call the actual Api
-				await Task.Delay(2000);
+				var results = await _apiAccess.CallApiAsync(apiLink.Text);
+
+				resultsText.Text = results.ToString();
 
 				statusStripLabel.Text = "Ready";
 
