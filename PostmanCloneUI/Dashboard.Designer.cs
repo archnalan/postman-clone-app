@@ -43,7 +43,7 @@
 			// 
 			formHeader.AutoSize = true;
 			formHeader.Font = new Font("Montserrat", 23.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-			formHeader.Location = new Point(103, 9);
+			formHeader.Location = new Point(132, 36);
 			formHeader.Name = "formHeader";
 			formHeader.Size = new Size(399, 81);
 			formHeader.TabIndex = 0;
@@ -53,7 +53,7 @@
 			// 
 			apiLabel.AutoSize = true;
 			apiLabel.Font = new Font("Montserrat", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-			apiLabel.Location = new Point(91, 118);
+			apiLabel.Location = new Point(120, 145);
 			apiLabel.Name = "apiLabel";
 			apiLabel.Size = new Size(93, 60);
 			apiLabel.TabIndex = 0;
@@ -62,7 +62,7 @@
 			// apiLink
 			// 
 			apiLink.BorderStyle = BorderStyle.FixedSingle;
-			apiLink.Location = new Point(190, 124);
+			apiLink.Location = new Point(219, 151);
 			apiLink.Name = "apiLink";
 			apiLink.Size = new Size(963, 42);
 			apiLink.TabIndex = 1;
@@ -71,7 +71,7 @@
 			// 
 			resultsText.BackColor = SystemColors.Window;
 			resultsText.BorderStyle = BorderStyle.FixedSingle;
-			resultsText.Location = new Point(103, 245);
+			resultsText.Location = new Point(132, 272);
 			resultsText.Multiline = true;
 			resultsText.Name = "resultsText";
 			resultsText.ReadOnly = true;
@@ -83,7 +83,7 @@
 			// 
 			resultsLabel.AutoSize = true;
 			resultsLabel.Font = new Font("Montserrat", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-			resultsLabel.Location = new Point(91, 182);
+			resultsLabel.Location = new Point(120, 209);
 			resultsLabel.Name = "resultsLabel";
 			resultsLabel.Size = new Size(153, 60);
 			resultsLabel.TabIndex = 0;
@@ -91,7 +91,7 @@
 			// 
 			// callApi
 			// 
-			callApi.Location = new Point(1175, 118);
+			callApi.Location = new Point(1204, 145);
 			callApi.Name = "callApi";
 			callApi.Size = new Size(112, 48);
 			callApi.TabIndex = 3;
