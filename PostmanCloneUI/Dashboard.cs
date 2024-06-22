@@ -13,7 +13,7 @@ namespace PostmanCloneUI
 {
 	public partial class Dashboard : Form
 	{
-		private readonly ApiAccess _apiAccess = new();
+		private readonly IApiAccess _apiAccess = new ApiAccess();
 
 		public Dashboard()
 		{
@@ -35,8 +35,10 @@ namespace PostmanCloneUI
 				return;
 			}
 
-			if(Enum.TryParse(HttpRequestType.SelectedItem!
-				.ToString(), out HttpAction action)==false)
+			HttpAction action;
+
+			if (Enum.TryParse(HttpRequestType.SelectedItem!
+				.ToString(), out action)==false)
 			{
 				statusStripLabel.Text = "INVALID HTTPVerb";
 				return;
@@ -53,6 +55,7 @@ namespace PostmanCloneUI
 
 				statusStripLabel.Text = "Ready";
 
+				resultsTab.Focus();
 			}
 			catch (Exception ex)
 			{
